@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Birthday Card</title>
+  <!-- Google Font-->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+
+  body {
+    height: 100vh;
+    width: 100%;
+    background-color: red;
+    overflow: hidden;
+    background: linear-gradient(#DC143C, white, #1c3b6c);
+    display: flex;
+    justify-content: center;
+
+  }
+
+  .card {
+    width: 510px;
+    height: 316px;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-perspective: 1200px;
+    perspective: 1200px;
+    transition: 1s;
+    margin-left: -12rem;
+  }
+
+  .card:hover {
+    transform: rotate(-5deg);
+  }
+
+  .card:hover .outside {
+    transform: rotateY(-130deg);
+  }
+
+  .outside,
+  .inside {
+    height: 101%;
+    width: 50%;
+    position: absolute;
+    left: 50.1%;
+  }
+
+  .inside {
+    background: linear-gradient(to left, #dfdd79 30%, #e6b129 );
+    background-image: url(l.jpg) linear-gradient(to left, #dfdd79 30%, #e6b129 );
+    line-height: 3;
+    padding: 0 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    left: 50%;
+  }
+
+  .outside {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    z-index: 1;
+    transform-origin: left;
+    transition: 2s;
+    cursor: pointer;
+
+  }
+
+  .front,
+  .back {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: rotateX(0deg);
+  }
+
+  .front {
+    background-image: url(mayur.jpg);
+    background-size: 99%;
+    height: 109%;
+
+    /* margin-right:5rem; */
+  }
+
+  .back {
+    transform: rotateY(180deg);
+    background: linear-gradient(to left, #e6b129, #dfdd79 30%);
+  }
+
+
+
+  .btn {
+    position: absolute;
+    color: red;
+    left: 18px;
+    margin-left: 55%;
+    bottom: 4rem;
+    text-shadow: 0 0 5px white;
+
+  }
+
+  button {
+    background-color: none;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    content: "\2764";
+
+  }
+
+  button:hover {
+    background-color: #1c3b6c;
+    /* Slightly darker red on hover */
+    content: "\2764";
+  }
+
+  button::before {
+    content: "\2764";
+    /* Unicode heart symbol */
+    font-size: 36px;
+    color: rgb(255, 0, 0);
+  }
+
+  .candle:before {
+    content: "";
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    background-color: #ffa500;
+    border-radius: 0 50% 50% 50%;
+    bottom: 48px;
+    transform: rotate(45deg);
+    left: -1px;
+  }
+
+  .outside p {
+    font-size: 23px;
+    text-transform: uppercase;
+    margin-top: 453px;
+    text-align: center;
+    letter-spacing: 6px;
+    color: #000046;
+
+  }
+
+  .inside h1 {
+    font-size: 120px;
+    line-height: 120px;
+  }
+</style>
+
+<body>
+  <div class="card">
+    <div class="outside">
+      <div class="front">
+        <p style="color: #ed1212; margin-top: 21.3rem; ">click mayur</p>
+        <div class="cake">
+          <div class="top-layer"></div>
+          <div class="middle-layer"></div>
+          <div class="bottom-layer"></div>
+          <!-- <div class="candle"></div> -->
+        </div>
+      </div>
+      <div class="back"></div>
+    </div>
+    <div class="inside">
+      <!-- <p style="size: 100%;">"तुम्हारे जन्मदिन के इस पावन अवसर पर, मैं यह प्रकट करना चाहता हूँ कि मेरे हृदय की गहराइयों में तुम्हारे प्रति अटूट प्रेम छिपा हुआ है। जन्मदिन की हार्दिक शुभकामनाएं!" -->
+        <p >🪔</p>
+
+      <p style="color: #ff0000;">"अहाँक जन्मदिनक एहि शुभ अवसर पर हम ई व्यक्त करय चाहब जे अहाँक प्रति हमर हृदय मे बहुत प्रेम अछि। अहाँ जीवन भरि
+        सुखी आ स्वस्थ रहू। जन्मदिनक हार्दिक शुभकामना!"</p>
+      
+    </div>
+  </div>
+  </div>
+  <button class="btn" onclick="btn()">← Back</button>
+
+
+  <script>
+    function btn() {
+      window.location.href = "button.html";
+    }
+  </script>
+
+</body>
+
+</html>

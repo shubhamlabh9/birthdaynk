@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     @media screen {
+            
+        }
+    body{
+       
+        background-color: #fcf8ec;
+    }
+    .contaner{
+        height: 111vw;
+        width: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;    
+        background-color: #fcf8ec;
+    }
+    .frame {
+        position: relative;
+    }
+    .btn{
+  position: absolute;
+  color: red;
+  left: 12px;
+  margin-left: 66%;
+  bottom: 6rem;
+  text-shadow: 0 0 5px white;
+
+}
+button{
+  position: fixed;
+background-color:none; 
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            content: "\2764";
+            
+        }
+
+        button:hover {
+            background-color: #1c3b6c; /* Slightly darker red on hover */
+            content: "\2764";
+        }
+
+        button::before {
+            content: "\2764"; /* Unicode heart symbol */
+            font-size: 36px;
+            color: rgb(255, 0, 0);
+        }
+    .eye{
+       width: 50px;
+       height: 50px;
+       background-color:#540701;
+       border-radius: 100% 0px;
+       margin:0 auto;
+       position: absolute;
+       top: 60px;
+       left: 195px;
+       transform: rotate(15deg);
+    }
+    .one{
+       width: 221px;
+       height: 350px;
+       /* background-color:#540701; */
+       border-radius: 50% 0% 50% 50%;
+       border-width: 0012px 12px;
+       border: 12px solid #540701;
+       z-index: 1;
+       margin-left: auto;
+       margin-top: 33%;
+    }  
+
+    .two {
+    width: 35px;
+    height: 111px;
+    background-color: transparent;
+    border-top: 15px solid #540701;
+    border-right: 9px solid #540701;
+    border-radius: 131%;
+    border-bottom: 5px solid #540701;
+    position: absolute;
+    left: 283px; 
+    bottom: 25px;
+    transform: rotate(-33deg);
+    z-index: 3;
+    }
+    .three{
+        width: 70px;
+       /* height: 10px; */
+       border-color:transparent transparent ;
+       border-radius: 50%;
+       border: 3px solid #540701;
+       position: absolute;
+       left: 141px;
+       top: 149px;
+       transform: rotate(-15deg);
+       /* z-index: 3; */
+       margin-left: auto;
+       /* margin-top: 35%; */
+    }
+    .four{
+       width: 70px;
+       /* height: 10px;     */
+       border-color:transparent transparent ;
+       border-radius: 50%;
+       border: 3px solid #540701;
+       position: absolute;
+       left: 139px;
+       top: 171px;
+       transform: rotate(-15deg);
+       /* z-index: 3; */
+    }
+    .five{
+       width: 60px;
+       /* height: 10px;     */
+       border: 3px solid #540701;
+       /* border-color:transparent transparent ; */
+       border-radius: 50%;
+       position: absolute;
+       left: 141px;
+       top: 199px;
+       transform: rotate(-15deg);
+       /* z-index: 3; */
+    }
+    .cleaner {
+    width: 93px;
+    height: 339px;
+    background-color: #fcf8ec;
+    position: absolute;
+    right: 0px;
+    bottom: 36px;
+    transform: rotate(00deg);
+    z-index: 2;
+}
+    .text{
+        position: absolute;
+        color: #540701;
+        font-size: xx-large;
+        bottom: 150px;
+        font-family:sans-serif;
+        font-weight: bold;
+        font-style:italic;
+    }
+
+    
+</style>
+<body>
+       <div class="container">
+       <div class="frame">
+            <div class="crown">
+            <div class="level-1"></div>
+                <div class="level-2"></div>
+                 <div class="level-3"></div>
+             </div>
+                <div class="eye"></div>    
+                <div class="one"></div>
+                <div class="cleaner"></div>
+                <div class="two"></div>
+                <div class="three"></div>    
+                <div class="four"></div>
+                <div class="five"></div>
+            </div>
+            <div class="text">Happy Birthday</div>
+        </div>
+        <button class="btn" onclick="btn()">Next</button>
+    </div>
+      <!-- <button class="btn" onclick="end()">Next →</button> -->
+  
+  <script>
+    function btn(){
+      window.location.href="button.html";
+    }
+  </script>
+    <!-- </div> -->
+</body>
+</html>

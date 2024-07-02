@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Zoom and Scroll Example</title>
+</head>
+<style>
+
+body{
+    background:linear-gradient( #DC143C,white,#1c3b6c	);
+   
+   /* margin-top: 1rem; */
+   height: 100vh;
+   overflow: hidden;
+   display: flex;
+   flex-direction: column;
+   /* gap: 18rem; */
+   margin: 0;
+    padding: 0;
+    /* Disable zooming */
+    zoom: 1;
+   
+}
+#maithiliAudio{
+    background-image:url(m.png);
+    height: 15rem;
+}
+#hindiAudio{
+    background-image:url(h.png);
+    height: 15rem;
+}
+.audio {
+    /* border: 2px solid; */
+    width: 70%;
+    height: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-top: 19rem;
+    gap: 33.9rem;
+   margin-left: 5rem;
+  /* margin-bottom: 3rem; */
+
+
+}
+.flower {
+    position: absolute;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background-image: url('flower.png'); /* Replace with your flower image path */
+    background-size: cover;
+    pointer-events: none;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+.img{
+    margin-left: 1.7rem;
+    height: 19rem;
+    width: 19rem;
+    margin-top: 9rem;
+    position: fixed;
+}
+.btn{
+  position: absolute;
+  color: red;
+  left: 18px;
+  margin-left: 55%;
+  bottom: 9.9rem;
+  text-shadow: 0 0 9px white;
+
+}
+button{
+background-color:none; 
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            content: "\2764";
+            
+        }
+
+        button:hover {
+            background-color: #1c3b6c; /* Slightly darker red on hover */
+            content: "\2764";
+        }
+
+        button::before {
+            content: "\2764"; /* Unicode heart symbol */
+            font-size: 36px;
+            color: rgb(255, 0, 0);
+        }
+/* #hindiAudio{
+background-image:;
+} */
+
+
+</style>
+<body>
+<div class="flower" style="left: 10%; animation-duration: 5s;"></div>
+    <div class="flower" style="left: 30%; animation-duration: 7s;"></div>
+    <div class="flower" style="left: 50%; animation-duration: 6s;"></div>
+    <div class="flower" style="left: 70%; animation-duration: 8s;"></div>
+    <div class="flower" style="left: 90%; animation-duration: 4s;"></div>
+    <div class="container"></div>
+    <div class="img">
+        <img src="nk.png" alt="img" style="width: 100%; height: 100%;">
+
+    
+    </div>
+<div class="audio">
+    <!-- <audio controls id="hindiAudio">
+        <source src="/song/aaa.mp3" type="audio/mpeg">
+    </audio> -->
+    
+        <audio controls id="maithiliAudio">
+            <source src="aaa.mp3" type="audio/mp3">
+        </audio>
+</div>
+
+</div>
+   
+</div>
+    <!-- <button><span><a href="/html/button.html" target=""><u>Back</u></a></span></button> -->
+    <button class="btn" onclick="btn()">← Back</button>
+
+</div>
+<script>
+  function btn(){
+    window.location.href="button.html";
+  }
+
+    // Hindi audio aur Maithili audio ke references prapt karen
+const hindiAudio = document.getElementById('hindiAudio');
+const maithiliAudio = document.getElementById('maithiliAudio');
+
+// Hindi audio chalane aur Maithili audio band karne ke liye ek function ka istemal karen
+function hindiAudioChalaoAurMaithiliAudioBandKaro() {
+    hindiAudio.play();
+    maithiliAudio.pause();
+}
+
+// Maithili audio chalane aur Hindi audio band karne ke liye ek function ka istemal karen
+function maithiliAudioChalaoAurHindiAudioBandKaro() {
+    maithiliAudio.play();
+    hindiAudio.pause();
+}
+
+// Hindi audio ko chalane ke liye ek event listener jodhen
+hindiAudio.addEventListener('play', () => {
+    maithiliAudio.pause();
+});
+
+// Maithili audio ko chalane ke liye ek event listener jodhen
+maithiliAudio.addEventListener('play', () => {
+    hindiAudio.pause();
+});
+
+// Hindi audio chalane aur Maithili audio band karne ke liye ek button ka istemal karen
+const hindiAudioChalaoButton = document.getElementById('hindiAudioChalaoButton');
+hindiAudioChalaoButton.addEventListener('click', () => {
+    hindiAudioChalaoAurMaithiliAudioBandKaro();
+});
+
+// Maithili audio chalane aur Hindi audio band karne ke liye ek button ka istemal karen
+const maithiliAudioChalaoButton = document.getElementById('maithiliAudioChalaoButton');
+maithiliAudioChalaoButton.addEventListener('click', () => {
+    maithiliAudioChalaoAurHindiAudioBandKaro();
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.querySelector('.container');
+
+    function createFlower() {
+        const flower = document.createElement('div');
+        flower.classList.add('flower');
+        flower.style.left = `${Math.random() * 100}vw`;
+        flower.style.animationDuration = `${Math.random() * 3 + 2}s`; // Random duration between 2s and 5s
+        flower.style.opacity = Math.random(); // Random opacity
+        container.appendChild(flower);
+
+        setTimeout(() => {
+            flower.remove();
+        }, 5000); // Remove flower after it has fallen for 5s
+    }
+
+    setInterval(createFlower, 300); // Create a new flower every 300ms
+});
+
+    
+    </script>
+</html>
